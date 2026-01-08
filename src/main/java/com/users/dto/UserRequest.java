@@ -1,13 +1,17 @@
 package com.users.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
+@Schema(description = "Request object for creating a new user")
 public class UserRequest {
 
+    @Schema(description = "Name of the user", example = "John Doe", required = true)
     @NotBlank(message = "Name is required")
     private String name;
 
+    @Schema(description = "Email address of the user", example = "john.doe@example.com", required = true)
     @NotBlank(message = "Email is required")
     @Email(message = "Email should be valid")
     private String email;
