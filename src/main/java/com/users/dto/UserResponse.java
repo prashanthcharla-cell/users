@@ -1,9 +1,17 @@
 package com.users.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "Response object containing user information")
 public class UserResponse {
 
+    @Schema(description = "Unique identifier of the user", example = "1")
     private Long id;
+    
+    @Schema(description = "User's full name", example = "John Doe")
     private String name;
+    
+    @Schema(description = "User's email address", example = "john.doe@example.com")
     private String email;
 
     // Default constructor
